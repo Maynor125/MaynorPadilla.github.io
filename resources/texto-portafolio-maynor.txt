@@ -1,0 +1,9 @@
+*Texto sobre mi*
+me llamo Maynor Oldemar Padilla tengo 20 años, soy desarrollador front-end , desarrollador de apps de escritorio y diseñador ui..
+
+llevo mas 3 año desarrollando software y mas de un año desarrollando paginas web y diseñando interfaces, y a lo largo de mi experiencia e trabajado con distintas tecnologias, framework y erramientas. actualmente curso el 4to año de la carrera de ingenieria en sistemas , soy alguien que le gusta el autoaprendisaje y la resolucion de problemas empleando la tecnologia.
+
+*Texto plataforma EAS*
+EAS "Easier Acounting Service" es un plataforma que brinda servicios contables y financieros que son esenciales dentro de una entidad comercial
+y esta dirigida principalmente a pequeñas empresas en cresimiento que no cuenten con la facilidad de pagar por estos servicios.
+
