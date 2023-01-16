@@ -532,7 +532,7 @@
 .slider-projectos
 {
   padding: 1rem 0 5rem;
-  width: 100%;
+  
 }
 .cartas-diseño
 {
@@ -727,16 +727,16 @@ footer
 {
   background: var(--second-color);
   margin-bottom: 0;
- 
+  width: 100%;
 }
 .footer
 {
-  width: 100%;
+  
   padding:20px 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin-bottom: -10px;
   bottom: 0;
 }
@@ -745,6 +745,7 @@ footer
   font-family: var(--font-poppins);
   font-weight: 400;
   font-size: 14px;
+  margin-bottom: 15px;
   
 }
 .media-2
@@ -871,6 +872,10 @@ footer
     align-items: center;
     margin-left: 0;
     margin-right: 0;
+  }
+  .footer>p
+  {
+    margin-bottom: 0;
   }
 }
 
