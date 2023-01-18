@@ -424,6 +424,7 @@
 }
 .targeta
 {
+    cursor: pointer;
     width: 180px;
     height: 180px;
     border: 1px solid var(--first-color);
@@ -927,7 +928,7 @@ footer
   .articulo-2
   {
     width: 430px;
-    transform: translateX(40px);
+    transform: translateX(25px);
   }
 
   .cabecera-portafolio
