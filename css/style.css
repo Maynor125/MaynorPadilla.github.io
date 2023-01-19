@@ -323,6 +323,10 @@
   justify-content: center;
   margin: 10px 7px 10px;
 }
+.botones a:hover
+{
+  box-shadow: 0px 2px 2px rgba(171, 129, 61,.50);
+}
 .social-media-1
 {
     width: 70%;
@@ -348,9 +352,10 @@
     color: var(--first-color-ligthen);
     font-size: 1.2rem;
 }
-.media a:hover
+.media:hover
 {
     color: var(--subtitle-color);
+    box-shadow: 0 0 5px rgba(171, 129, 61,.50);
 }
 /*---*/
 .articulo-2
@@ -416,6 +421,7 @@
 }
 .contenedor-targetas
 {
+  padding-top: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -524,11 +530,18 @@
   transition: all .5s;
   cursor: pointer;
 }
-
+.option button:hover
+{
+  box-shadow: 0 2px 3px rgba(255, 255, 255, .20);
+}
 .option-activate
 {
   color: var(--first-color);
   border-color: var(--first-color);
+}
+.option-activate:hover
+{
+  box-shadow: none;
 }
 .slider-projectos
 {
@@ -594,7 +607,7 @@
   font-size: var(--small-font-size);
   margin-bottom: 15px;
 }
-.info button
+.info .boton
 {
   border-color: #AB813D;
   width: 90%;
@@ -605,7 +618,12 @@
   font-size: 13px;
   display: flex;
   justify-content: center;
- 
+  transition: .4s;
+}
+.info .boton:hover
+{
+  border-color: #F1B66C;
+  color: #F1B66C;
 }
 /*Clases para las cartas activas e inactivas*/
 
@@ -706,6 +724,7 @@
 {
   margin-top: -15px;
   text-align: center;
+  padding-bottom: 5rem;
 }
 .btns-contacto
 {
@@ -727,6 +746,12 @@
 {
   color: var(--first-color);
   border-color: var(--first-color);
+}
+.imagen-audifonos
+{
+  width: 150px;
+  height: 150px;
+  margin: 10px auto;
 }
 /*Footer*/
 footer
@@ -1079,10 +1104,17 @@ footer
  .about-column-1
  {
   text-align: left;
+  width: 550px;
+ }
+ .about-column-1 p{
+  text-align: left;
+  width: 100%;
+  margin: 0;
+  max-width: 570px;
  }
  .contact-container
  {
-  padding-bottom: 5rem;
+  padding-bottom: 10rem;
   padding-top: 3rem;
  }
  .tecnologies-container
