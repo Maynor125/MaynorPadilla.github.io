@@ -32,10 +32,7 @@ var swiperPopular = new Swiper(".slider-projectos-w", {
     slidesPerView:'auto',
     loop:true,
 
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
+    
 });
 var swiperPopular = new Swiper(".slider-projectos-a", {
     spaceBetween:32,
@@ -44,10 +41,7 @@ var swiperPopular = new Swiper(".slider-projectos-a", {
     slidesPerView:'auto',
     loop:true,
 
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
+    
 });
 
 /*=============== Menu desplegable ===============*/
