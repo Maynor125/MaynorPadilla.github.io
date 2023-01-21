@@ -449,7 +449,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 0 0 3px var(--desactive-color);
+    box-shadow: 0 0 8px var(--desactive-color);
 }
 .targeta-E
 {
@@ -578,7 +578,7 @@
 }
 .card
 {
-  border: 1px solid var(--first-color-dark);
+  border: 1.5px solid var(--first-color-dark);
   width: 290px;
   height: 367px;
   background-color: var(--container-color);
@@ -590,6 +590,7 @@
   margin-bottom: 20px;
   overflow-y: hidden;
   transition: 1s ease-in-out;
+  box-shadow: 0 0 4px rgba(255, 255, 255, .25);
 }
 
 .card>img
@@ -736,6 +737,7 @@
   margin-top: -15px;
   text-align: center;
   padding-bottom: 5rem;
+  padding-top: 2rem;
 }
 .btns-contacto
 {

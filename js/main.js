@@ -141,3 +141,14 @@ btnApps.addEventListener('click',()=>
  
 })
 
+/*=============== SCROLL REVEAL ANIMATION ===============*/
+const r=ScrollReveal({
+   origin:'top',
+   distance:'60px',
+   duration:2500,
+   delay:400,
+   //reset:true,
+})
+r.reveal(`H`);
+r.reveal(`T`,{delay:500});
+r.reveal(`home__search`,{delay:600});
