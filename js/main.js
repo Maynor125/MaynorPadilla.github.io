@@ -25,24 +25,7 @@ var swiperPopular = new Swiper(".slider-projectos", {
       prevEl: ".swiper-button-prev",
     },
 });
-var swiperPopular = new Swiper(".slider-projectos-w", {
-    spaceBetween:32,
-    grabCursor:true,
-    centeredSlides:true,
-    slidesPerView:'auto',
-    loop:true,
 
-    
-});
-var swiperPopular = new Swiper(".slider-projectos-a", {
-    spaceBetween:32,
-    grabCursor:true,
-    centeredSlides:true,
-    slidesPerView:'auto',
-    loop:true,
-
-    
-});
 
 /*=============== Menu desplegable ===============*/
 const Menu=document.querySelector(".menu")

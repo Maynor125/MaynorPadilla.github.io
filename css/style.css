@@ -300,6 +300,16 @@
 }
 
 /* ----------------------------Home------------------------------ */
+.home
+{
+  background: -webkit-radial-gradient(
+    #07080E, 
+    #09090c,
+    #07080E
+
+  );
+  height: 120%;
+}
 .home-container
 {
   padding-top: 1rem;
@@ -548,6 +558,7 @@
   padding: 1rem 0 5rem;
   
 }
+
 .cartas-web
 {
   overflow: hidden;
