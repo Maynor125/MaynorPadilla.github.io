@@ -141,7 +141,7 @@ btnApps.addEventListener('click',()=>
  
 })
 
-/*=============== SCROLL REVEAL ANIMATION ===============*/
+/*=============== SCROLL REVEAL ANIMATION ===============
 const r=ScrollReveal({
    origin:'top',
    distance:'60px',
@@ -151,4 +151,8 @@ const r=ScrollReveal({
 })
 r.reveal(`H`);
 r.reveal(`T`,{delay:500});
-r.reveal(`home__search`,{delay:600});
+r.reveal(`home__search`,{delay:600});*/
+
+/*=============== GSAP ANIMATION ===============*/
+gsap.from('articulo-2',{opacity:0, duration:2, delay:.5, y:60})
+
