@@ -1044,6 +1044,18 @@ footer
     font-size: 1.2rem;
    }
 }
+@media screen  and (min-width:405px)
+{
+  .contact-container
+  {
+    padding: 4rem 0 8rem;
+
+  }
+  .contact-container a
+  {
+    
+  }
+}
 /* For medium devices */
 @media screen  and (min-width:576px){
   .nav-menu
@@ -1107,8 +1119,8 @@ footer
   .experience-container
   {
     
-    padding-top: 5rem;
-    padding-bottom: 6rem;
+    padding-top: 3rem;
+    padding-bottom: 0rem;
   }
   .articulo-2
   {
@@ -1126,6 +1138,10 @@ footer
     margin-bottom: 20px;
    
     
+  }
+  .tecnologies-container
+  {
+    padding-top: 5rem;
   }
   .portafolio-container .titulo
   {
