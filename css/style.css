@@ -442,12 +442,12 @@
 .adds
 {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin: auto;
   margin-bottom: 30px;
   max-width: 345px;
   padding-top: 10px;
-  
+  flex-wrap: wrap;
 }
 .adds-item
 {
@@ -1036,8 +1036,17 @@ footer
     justify-content: center;
   }
 }
+@media screen and (max-width:370px)
+{
+  .adds-item
+  {
+    margin: 0 5px;
+    margin-bottom: 20px;
+  }
+}
 @media screen and (max-width:320px) 
 {
+  
   .targeta
   {
     width: 170px;
