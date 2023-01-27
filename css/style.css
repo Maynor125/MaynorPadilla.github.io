@@ -462,6 +462,16 @@
   box-shadow: 0 0 2px rgba(255, 255, 255, .20);
   text-align: center;
 }
+.adds-item
+{
+ 
+  cursor: pointer;
+  transition: .4s;
+}
+.adds-item:hover
+{
+  transform: translateY(-5px);
+}
 .adds-item i
 {
   color: #F1B66C;
@@ -591,7 +601,7 @@
   place-items: center;
   visibility: hidden;
   opacity: 0;
-  transition: .4s;
+  transition: all.6s;
   z-index: 100;
  
 }
@@ -907,12 +917,7 @@
   color: var(--first-color);
   border-color: var(--first-color);
 }
-.imagen-audifonos
-{
-  width: 150px;
-  height: 150px;
-  margin: 10px auto;
-}
+
 .info-contacto
 {
   display: flex;
@@ -930,14 +935,20 @@
 }
 @media screen  and (max-width:310px){
   .info-contacto
-{
-  flex-direction: column;
-  margin: 10px auto;
+  {
+    flex-direction: column;
+    margin: 10px auto;
+  }
 }
 .item-contacto
 {
   margin: 10px;
+  cursor: pointer;
+  transition: .4s;
 }
+.item-contacto:hover
+{
+  transform: translateY(-5px);
 }
 .item-contacto i{
   color: #F1B66C;
