@@ -339,28 +339,26 @@
 }
 .social-media-1
 {
-    width: 70%;
+    width: 92%;
     max-width: 250px;
     display: flex;
     justify-content: space-around;
     margin: 30px auto 10px;
-  
 }
 .media
 {
     width: 35px;
     height: 35px;
     border: 1px solid var(--first-color-ligthen);
-    padding: 5px;
     border-radius: 50%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    
+    justify-content: center;   
 }
 .media a{
     color: var(--first-color-ligthen);
     font-size: 1.2rem;
+    margin: auto;
 }
 .media:hover
 {
@@ -849,10 +847,12 @@
 }
 .tec
 {
+  position: relative;
   width: 40px;
   height: 40px;
   margin: 5px 5px 20px;
 }
+
 @media screen and (max-width:600px) {
   .tec
 {
@@ -874,20 +874,39 @@
   width: 100%;
   height: 100%;
 }
-.tec span
-{
-  display: none;
-  background: var(--second-color);
-  padding: 3px 7px;
-  border-radius: 1rem;
-  box-shadow: 0 0 3px rgba(255, 255, 255, .40);
-  font-size: 8px;
+.tec span {
+  visibility: hidden;
+  width: 100px;
+  background-color: var(--second-color);
   color: #E0E0E0;
-  margin: 5px auto;
-  font-family:var(--font-poppins);
-  font-weight: 600;
+  text-align: center;
+  border-radius: 1rem;
+  padding: 4px;
+  font-size: 12px;
+  position: absolute;
+  box-shadow: 0 0 3px rgba(255, 255, 255, .30);
+  font-family: var(--font-poppins);
+  z-index: 1;
+  top: 125%; /* Mostrar el tooltip debajo del icono */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 
+.tec:hover span{
+  visibility: visible;
+    opacity: 1;
+}
+
+/* Ajustar tamaño y posición del tooltip en pantallas pequeñas */
+@media (max-width: 768px) {
+  .tec span {
+      width: 80px;
+      font-size: 10px;
+      top: 150%; /* Ajustar la distancia del tooltip en pantallas pequeñas */
+  }
+}
 /*Contactos*/
 .contact-container
 {
@@ -1227,7 +1246,7 @@ footer
     margin-top: auto;
     margin-bottom: auto;
     grid-column: 3/4;
-    align-content: flex-end;
+    
    }
    .articulo-1 .botones,.social-media-1
    {
