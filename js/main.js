@@ -141,18 +141,31 @@ btnApps.addEventListener('click',()=>
  
 })
 
-/*=============== SCROLL REVEAL ANIMATION ===============
-const r=ScrollReveal({
-   origin:'top',
-   distance:'60px',
-   duration:2500,
-   delay:400,
-   //reset:true,
-})
-r.reveal(`H`);
-r.reveal(`T`,{delay:500});
-r.reveal(`home__search`,{delay:600});*/
 
-/*=============== GSAP ANIMATION ===============*/
-gsap.from('articulo-2',{opacity:0, duration:2, delay:.5, y:60})
+document.addEventListener("DOMContentLoaded", function() {
+   const r = ScrollReveal({
+       origin: 'top',
+       distance: '60px',
+       duration: 2500,
+       delay: 400,
+   });
+   
+   r.reveal('.articulo-2', {opacity: 0, duration: 2, delay: 0.5, y: 60});
+});
 
+ScrollReveal().reveal('.articulo-3',{ delay: 500,opacity:0});
+ScrollReveal().reveal('.articulo-1',{ delay: 500,opacity:0 });
+ScrollReveal().reveal('.about-column-1',{ delay: 400,opacity:0 });
+ScrollReveal().reveal('.experience-container',{ delay: 400,opacity:0 });
+ScrollReveal().reveal('.about-column-2',{ delay: 700,opacity:0 });
+ScrollReveal().reveal('.portafolio-container',{ delay: 400,opacity:0 });
+ScrollReveal().reveal('.tecnologies-container',{ delay: 400,opacity:0 });
+ScrollReveal().reveal('.contact-container',{ delay: 400,opacity:0 });
+
+
+
+
+// Animación con GSAP
+document.addEventListener("DOMContentLoaded", function() {
+   gsap.from("#imgH", {opacity: 0, duration: 1.5, y: 70, ease: "power2.out"});
+});

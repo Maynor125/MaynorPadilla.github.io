@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+
 /*=============== VARIABLES CSS ===============*/
 :root
 {
@@ -1013,7 +1014,7 @@ footer
 }
 .media-2
 {
-  max-width: 200px;
+  max-width: 250px;
 }
 .media-2 a
 { 
