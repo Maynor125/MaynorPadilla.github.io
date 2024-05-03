@@ -87,7 +87,7 @@
                 
                 <article class="articulo-1">
                     <div class="botones">
-                        <a class="boton" href="./docs/Curiculum Maynor.pdf"><i class='bx bx-downvote'></i></i> Descargar CV</a>
+                        <a target="_blank" class="boton" href="./docs/CV Maynor Oldemar Padilla.pdf"><i class='bx bx-downvote'></i></i> Descargar CV</a>
                         <a class="boton" href="https://api.whatsapp.com/send?phone=83662224"><i class='bx bxl-whatsapp'></i> Conversemos</a>
                     </div>
                     <div class="social-media-1">
@@ -323,7 +323,7 @@
                         Proyectos que eh trabajado.
                     </h1>
                     <div class="option">
-                        <button id="Webs" class="boton option-activate"><i class='bx bxl-slack-old'></i> Webs</button>
+                        <button id="Webs" class="boton option-activate"><i class='bx bxl-chrome'></i> Webs</button>
                         <button id="Diseños" class="boton"><i class='bx bxs-palette'></i> Desing</button>
                         <button id="Apps" class="boton"><i class='bx bxl-windows'></i> Apps</button>
                     </div>
@@ -546,6 +546,39 @@
                 </div>
                </div>
         </section>
+        <section class="section newPortafolio">
+            <div class="newPortafoliocontainer container grid">
+                <p class="titulo section-subtitle">Portafolio!</p>
+                <div class="cabecera-portafolio">
+                   <h1 class="section-title enunciado">
+                       Proyectos que eh trabajado.
+                   </h1>
+                   <div class="option">
+                       <button id="Webs" class="boton option-activate"><i class='bx bxl-chrome'></i> Webs</button>
+                       <button id="Diseños" class="boton"><i class='bx bxs-palette'></i> Desing</button>
+                       <button id="Apps" class="boton"><i class='bx bxl-windows'></i> Apps</button>
+                   </div>
+                </div>
+                <div class="embla">
+                    <div class="embla__container">
+                      <!-- Proyectos se agregarán aquí -->
+                    </div>
+                    <div class="embla__dots">
+                        <button class="embla__dot is-selected"></button>
+                        <button class="embla__dot"></button>
+                        <!-- Agrega más botones si hay más elementos -->
+                      </div>
+                    <button  class="embla__button embla__button--prev" aria-label="Go to previous slide">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="#FFC071" d="m9.55 12l7.35 7.35q.375.375.363.875t-.388.875t-.875.375t-.875-.375l-7.7-7.675q-.3-.3-.45-.675t-.15-.75t.15-.75t.45-.675l7.7-7.7q.375-.375.888-.363t.887.388t.375.875t-.375.875z"/></svg>
+                    </button>
+                    <button class="embla__button embla__button--next bx bxl-right" aria-label="Go to next slide">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="#FFC071" d="m14.475 12l-7.35-7.35q-.375-.375-.363-.888t.388-.887t.888-.375t.887.375l7.675 7.7q.3.3.45.675t.15.75t-.15.75t-.45.675l-7.7 7.7q-.375.375-.875.363T7.15 21.1t-.375-.888t.375-.887z"/></svg>
+                    </button>
+                  </div>
+                </div>
+            </div>
+        
+        </section>
         <section class="section" id="skill">
             <div class="tecnologies-container container grid">
                 <p class="titulo section-subtitle">Tecnologias!</p>
@@ -698,5 +731,12 @@
 
 
     <script src="./js/experiencia.js"></script>
+
+    <!-- Agrega los estilos de Embla Carousel -->
+
+
+<!-- Agrega Embla Carousel -->
+<script src="./js/carrusel.js"></script>
+<script src="https://unpkg.com/embla-carousel"></script>
 </body>
 </html>

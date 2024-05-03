@@ -169,3 +169,4 @@ ScrollReveal().reveal('.contact-container',{ delay: 400,opacity:0 });
 document.addEventListener("DOMContentLoaded", function() {
    gsap.from("#imgH", {opacity: 0, duration: 1.5, y: 70, ease: "power2.out"});
 });
+

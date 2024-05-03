@@ -775,7 +775,7 @@
   font-size: var(--small-font-size);
   margin-bottom: 15px;
 }
-.info .boton
+.info .boton,.newCard a
 {
   border-color: #AB813D;
   width: 90%;
@@ -788,13 +788,120 @@
   justify-content: center;
   transition: .4s;
 }
-.info .boton:hover
+.info .boton:hover,.newCard a:hover
 {
   border-color: #F1B66C;
   color: #F1B66C;
 }
 /*Clases para las cartas activas e inactivas*/
 
+
+/*Nuevo posible portafolio de proyectos*/
+.newCard{
+  width: 290px;
+  height: 367px;
+  background: var(--second-color);
+  border-radius: 6px;
+  padding: 1.2rem;
+}
+.containerImgNewCard{
+  background-color: #1B1B32;
+  height: 8.5rem;
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 0 2px rgba(172, 170, 170, 0.3);
+}
+.imgNewCard{
+  height: 100%;
+  object-fit: contain;
+}
+.tecnologiesUsed{
+  margin: 1rem 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  flex-wrap: wrap;
+}
+.bage{
+  padding: .2rem .4rem;
+  background-color: #AB813D;
+  border-radius: 5px;
+  color: #E0E0E0;
+  font-size: small;
+  font-family: var(--font-poppins);
+  cursor: pointer;
+  transition: all .4s;
+}
+.bage:hover{
+  background-color: #936F34;
+}
+.textosNewCard{
+  margin-bottom: 1rem;
+}
+.textosNewCard h2{
+ font-family: var(--font-raleway);
+ font-weight: 700;
+ font-size: 1.4rem;
+}
+
+.textosNewCard p{
+  margin-top: .5rem;
+  font-family: var(--font-raleway);
+  font-size: 14px;
+  line-height: 1.2rem;
+}
+
+.newCard a{
+  width: 100%;
+}
+
+/* Estilos para mover los botones de navegación debajo del carrusel */
+.embla__container {
+  position: relative; /* Añade posición relativa para que los botones absolutos sean relativos a este contenedor */
+}
+
+/* Estilos para los puntos de navegación */
+.embla__dots {
+  display: flex;
+  justify-content: center;
+  /* Añade espacio entre los botones y los puntos */
+}
+
+.embla__dot {
+  color: #ccc;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px; /* Espacio entre los puntos */
+  background-color: #ccc; /* Color de los puntos */
+  border-radius: 50%; /* Hacer los puntos redondos */
+  cursor: pointer;
+}
+
+.embla__dot.is-selected {
+  background-color: #333; /* Cambia el color del punto seleccionado */
+}
+
+
+
+.embla__button {
+  color: #E0E0E0;
+  background: transparent;
+  border: 1px solid #E0E0E0;
+  padding: .5rem;
+  cursor: pointer;
+  margin-top: 1rem;
+ /* Posiciona los botones en la parte inferior */
+  z-index: 10;
+}
+
+.embla__button--prev {
+  left: 50px; /* Ajusta la posición del botón previo */
+}
+
+.embla__button--next {
+  right: 50px; /* Ajusta la posición del botón siguiente */
+}
 
 
 /* Swiper class */
