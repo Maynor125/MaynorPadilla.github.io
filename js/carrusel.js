@@ -1,50 +1,22 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const emblaNode = document.querySelector(".embla__container");
-  const buttons = document.querySelectorAll(".option button");
-
-  let embla = null;
-
-  function populateCarousel(projects) {
-    emblaNode.innerHTML = "";
-
-    projects.forEach((project) => {
-      const slide = document.createElement("div");
-      slide.classList.add("embla__slide");
-      slide.dataset.categoria = project.categoria;
-
-      slide.innerHTML = `
-          <div class="newCard">
-            <div class="containerImgNewCard">
-              <img class="imgNewCard" src="${project.imagen}" alt="${
-        project.nombre
-      }">
-            </div>
-            <div class="tecnologiesUsed">
-              ${project.tecnologias
-                .map(
-                  (tecnologia) => `<div class="bage"><p>${tecnologia}</p></div>`
-                )
-                .join("")}
-            </div>
-            <div class="textosNewCard">
-              <h2>${project.nombre}</h2>
-              <p>${project.descripcion}</p>
-            </div>
-            <a target="_blank" href="${project.repositorio}" class="boton">
-              Repositorio
-            </a>
-          </div>
-        `;
-
-      emblaNode.appendChild(slide);
-    });
-
-    if (embla) {
-      embla.reInit();
-    } else {
-      embla = EmblaCarousel(emblaNode, { loop: true });
-    }
-  }
+    
+  /*=============== Swiper Proyectos ===============*/
+  var swiperPopular = new Swiper(".swiper-container", {
+    // Opciones del Swiper
+    slidesPerView: 'auto',
+    spaceBetween: 32,
+    grabCursor: true,
+    centeredSlides: true,
+    loop: true,
+    pagination: { 
+      el: ".swiper-pagination", // Elemento donde se mostrarán los puntos de navegación
+      clickable: true, // Permitir la navegación haciendo clic en los puntos
+    },
+    navigation: {
+      nextEl: ".swiper-button-next", // Botón de avance
+      prevEl: ".swiper-button-prev", // Botón de retroceso
+    },
+  });
 
   const proyectos = [
     {
@@ -109,33 +81,91 @@ document.addEventListener("DOMContentLoaded", function () {
       categoria: "Diseños",
       tecnologias: ["Figma"],
       descripcion: "Prototipo de agenda digital adaptable a cualquier dispositivo.",
-      repositorio: "https://www.figma.com/file/2Zz5rIvOxZ6QvdxVF2PGrN/Untitled?node-id=0%3A1&t=vFoov1cGfjYzrgUx-1",
+      repositorio: "https://www.figma.com/file/oS5bXlAZa4Eh5dJHIMzink/Untitled?t=vFoov1cGfjYzrgUx-1",
     },
     {
-      nombre: "Proyecto 3",
+      nombre: "Portafolio",
+      imagen: "./img/project/proyecto2.png",
+      categoria: "Diseños",
+      tecnologias: ["Figma"],
+      descripcion: "Prototipo de portafolio para programador con un buen diseño.",
+      repositorio: "https://www.figma.com/file/D7QwHgzEu1bURGiks6LBi6/Untitled?node-id=0%3A1&t=vFoov1cGfjYzrgUx-1",
+    },
+    {
+      nombre: "Sistema SGFS",
       imagen: "./img/project/proyecto3.png",
       categoria: "Apps",
-      tecnologias: ["React Native", "Firebase"],
-      descripcion: "Descripción del proyecto 3",
+      tecnologias: ["C#","MySQL","Bonify"],
+      descripcion: " Sistema para la gestion de articulos ferreteros.",
       repositorio: "https://github.com/proyecto3.git",
     },
-    // Agrega más proyectos aquí...
+    {
+      nombre: "Calculadora subneting",
+      imagen: "./img/project/proyecto3.png",
+      categoria: "Apps",
+      tecnologias: ["C#","Bonify"],
+      descripcion: "Calculadora para subnetear redes de las 2 formas mas utilizadas.",
+      repositorio: "https://github.com/proyecto3.git",
+    },
+    {
+      nombre: "Venta de cocinas",
+      imagen: "./img/project/proyecto3.png",
+      categoria: "Apps",
+      tecnologias: ["C#","SQL","Bonify"],
+      descripcion: "sistema de control para cadena de tiendas de cocinas.",
+      repositorio: "https://github.com/proyecto3.git",
+    },
   ];
 
-  // Filtramos los proyectos por defecto
-  const proyectosFiltrados = proyectos.filter(
-    (project) => project.categoria === "Webs"
-  );
-  populateCarousel(proyectosFiltrados);
+  // Función para filtrar y agregar proyectos al carrusel
+  function populateCarousel(categoria) {
+    const proyectosFiltrados = proyectos.filter(project => project.categoria === categoria);
 
-  // Añadimos el evento para los botones de selección
-  buttons.forEach((button) => {
+    const swiperWrapper = document.querySelector(".swiper-wrapper");
+    swiperWrapper.innerHTML = ""; // Clear the current projects
+
+    proyectosFiltrados.forEach(project => {
+      const slide = document.createElement("div");
+      slide.classList.add("swiper-slide");
+
+      slide.innerHTML = `
+        <div class="newCard">
+          <div class="containerImgNewCard">
+            <img class="imgNewCard" src="${project.imagen}" alt="${project.nombre}">
+          </div>
+          <div class="tecnologiesUsed">
+            ${project.tecnologias.map(tecnologia => `<div class="bage"><p>${tecnologia}</p></div>`).join("")}
+          </div>
+          <div class="textosNewCard">
+            <h2>${project.nombre}</h2>
+            <p>${project.descripcion}</p>
+          </div>
+          <a target="_blank" href="${project.repositorio}" class="boton">
+            ${project.categoria === "Diseños"? "Ir a figma" : "Repositorio"}
+          </a>
+        </div>
+      `;
+
+      swiperPopular.slide.append(slide);
+    });
+
+    swiper.update(); // Update the Swiper
+  }
+
+  const buttons = swiper.el.querySelectorAll(".option button");
+  buttons.forEach(button => {
     button.addEventListener("click", () => {
       const categoria = button.id;
-      const proyectosFiltrados = proyectos.filter(
-        (project) => project.categoria === categoria
-      );
-      populateCarousel(proyectosFiltrados);
+      if (categoria) {
+        populateCarousel(categoria);
+      } else {
+        console.error(`Invalid categoria: ${categoria}`);
+      }
     });
   });
+
+  // Show the "Webs" category by default
+  populateCarousel("Webs");
 });
+
+  

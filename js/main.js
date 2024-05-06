@@ -12,19 +12,178 @@ function scrollHeader() {
 }
 window.addEventListener('scroll',scrollHeader)
 
-/*=============== Swiper Proyectos ===============*/
-var swiperPopular = new Swiper(".slider-projectos", {
-    spaceBetween:32,
-    grabCursor:true,
-    centeredSlides:true,
-    slidesPerView:'auto',
-    loop:true,
-
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+ document.addEventListener("DOMContentLoaded", function(){
+  const proyectos = [
+    {
+      nombre: "Control universidad",
+      imagen: "../img/project/calculadora1.png",
+      categoria: "Webs",
+      tecnologias: ["Django", "Sass", "Potsgre SQL"],
+      descripcion: " plataforma para el control de registros de una universidad.",
+      repositorio: "https://github.com/Maynor125/Calculadora.git",
     },
+    {
+      nombre: "Plataforma EAS",
+      imagen: "../img/project/eas.png",
+      categoria: "Webs",
+      tecnologias: ["HTML", "CSS", "JavaScript","Node"],
+      descripcion: "plataforma que facilita erramientas de contabilidad y finanzas.",
+      repositorio: "https://github.com/Maynor125/Calculadora.git",
+    },
+    {
+      nombre: "Admin links",
+      imagen: "../img/project/eas.png",
+      categoria: "Webs",
+      tecnologias: ["HTML", "CSS","Node","Mongo DB"],
+      descripcion: "sitio en el cual podras almacenar tus enlaces de forma segura.",
+      repositorio: "https://github.com/Maynor125/Calculadora.git",
+    },
+    {
+      nombre: "SocioPosts",
+      imagen: "../img/project/sociopost.png",
+      categoria: "Webs",
+      tecnologias: ["Next js","Css","Node","MongoDB"],
+      descripcion: "Sitio para alogar publicaciones en la cual puedes subir imagenes y mas",
+      repositorio: "https://github.com/Maynor125/Calculadora.git",
+    },
+    {
+        nombre: "Calculadora",
+        imagen: "../img/project/calculadora1.png",
+        categoria: "Webs",
+        tecnologias: ["HTML", "CSS", "React"],
+        descripcion: "Calculadora iteractiva con las funciones basicas",
+        repositorio: "https://github.com/Maynor125/Calculadora.git",
+      },    
+    {
+      nombre: "Tienda astronomia",
+      imagen: "./img/project/proyecto2.png",
+      categoria: "Diseños",
+      tecnologias: ["Figma"],
+      descripcion: "Prototipo de tienda online de articulos astronomicos.",
+      repositorio: "https://www.figma.com/file/2Zz5rIvOxZ6QvdxVF2PGrN/Untitled?node-id=0%3A1&t=vFoov1cGfjYzrgUx-1",
+    },
+    {
+      nombre: "Conecta Emprende",
+      imagen: "./img/project/proyecto2.png",
+      categoria: "Diseños",
+      tecnologias: ["Figma"],
+      descripcion: "Prototipo de aplicacion movil para la gestion de contenido.",
+      repositorio: "https://www.figma.com/file/2Zz5rIvOxZ6QvdxVF2PGrN/Untitled?node-id=0%3A1&t=vFoov1cGfjYzrgUx-1",
+    },
+    {
+      nombre: "Agenda",
+      imagen: "./img/project/proyecto2.png",
+      categoria: "Diseños",
+      tecnologias: ["Figma"],
+      descripcion: "Prototipo de agenda digital adaptable a cualquier dispositivo.",
+      repositorio: "https://www.figma.com/file/oS5bXlAZa4Eh5dJHIMzink/Untitled?t=vFoov1cGfjYzrgUx-1",
+    },
+    {
+      nombre: "Portafolio",
+      imagen: "./img/project/proyecto2.png",
+      categoria: "Diseños",
+      tecnologias: ["Figma"],
+      descripcion: "Prototipo de portafolio para programador con un buen diseño.",
+      repositorio: "https://www.figma.com/file/D7QwHgzEu1bURGiks6LBi6/Untitled?node-id=0%3A1&t=vFoov1cGfjYzrgUx-1",
+    },
+    {
+      nombre: "Sistema SGFS",
+      imagen: "./img/project/proyecto3.png",
+      categoria: "Apps",
+      tecnologias: ["C#","MySQL","Bonify"],
+      descripcion: " Sistema para la gestion de articulos ferreteros.",
+      repositorio: "https://github.com/proyecto3.git",
+    },
+    {
+      nombre: "Calculadora subneting",
+      imagen: "./img/project/proyecto3.png",
+      categoria: "Apps",
+      tecnologias: ["C#","Bonify"],
+      descripcion: "Calculadora para subnetear redes de las 2 formas mas utilizadas.",
+      repositorio: "https://github.com/proyecto3.git",
+    },
+    {
+      nombre: "Venta de cocinas",
+      imagen: "./img/project/proyecto3.png",
+      categoria: "Apps",
+      tecnologias: ["C#","SQL","Bonify"],
+      descripcion: "sistema de control para cadena de tiendas de cocinas.",
+      repositorio: "https://github.com/proyecto3.git",
+    },
+  ];
+
+ const swiperWrapper = document.querySelector(".swiper-wrapper");
+ const buttons = document.querySelectorAll(".option button");
+ 
+ // Add active class to the web button initially
+ buttons[0].classList.add('option-activate');
+ function generateSlides(category) {
+  const filteredProyectos = proyectos.filter((project) => project.categoria === category);
+  const slidesHTML = filteredProyectos.map((project) => {
+    return `
+      <div class="swiper-slide">
+        <div class="newCard">
+          <div class="containerImgNewCard">
+            <img class="imgNewCard" src="${project.imagen}" alt="${project.nombre}">
+          </div>
+          <div class="tecnologiesUsed">
+            ${project.tecnologias.map((tecnologia) => `<div class="bage"><p>${tecnologia}</p></div>`).join("")}
+          </div>
+          <div class="textosNewCard">
+            <h2>${project.nombre}</h2>
+            <p>${project.descripcion}</p>
+          </div>
+          <a target="_blank" href="${project.repositorio}" class="boton">
+            ${project.categoria === "Diseños"? "Ir a figma" : "Repositorio"}
+          </a>
+        </div>
+      </div>
+    `;
+  }).join("");
+  swiperWrapper.innerHTML = slidesHTML;
+}
+
+// Initialize with all projects
+generateSlides("Webs");
+const swiper = new Swiper('.swiper', {
+  direction: 'horizontal',
+  loop: true,
+  slidesPerView: 3,
+  spaceBetween: 10,
+ 
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  scrollbar: {
+    el: '.swiper-scrollbar',
+    draggable: true,
+  },
 });
+
+    // Add event listeners to buttons
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const category = button.id;
+      generateSlides(category);
+      swiper.update(); // Update Swiper instance
+
+      // Remove active class from all buttons
+    buttons.forEach((button) => {
+      button.classList.remove('option-activate');
+    });
+
+    // Add active class to the clicked button
+    button.classList.add('option-activate');
+    });
+  });
+
+  
+  });
 
 
 /*=============== Menu desplegable ===============*/
@@ -58,88 +217,6 @@ const scrollActive = () =>{
 	})
 }
 window.addEventListener('scroll', scrollActive) 
-
-
-//----------Opciones para mostrar los proyectos del portafolio---------------
-
-
-
-const btnWebs=document.getElementById("Webs")
-const btnDiseno=document.getElementById("Diseños")
-const btnApps=document.getElementById("Apps")
-
-btnWebs.addEventListener('click',()=>
-{
-    btnDiseno.classList.remove("option-activate")
-    btnWebs.classList.add("option-activate")
-    btnApps.classList.remove("option-activate")
-
-    var x = document.getElementsByClassName('cartas-diseño');
-
-    for (var i = 0; i < x.length; i++) {
-       x[i].style.display= "none";
-    } 
-
-    var y = document.getElementsByClassName('cartas-web');
-
-  for (var i = 0; i < y.length; i++) {
-     y[i].style.display= "block";
-  } 
-    var z = document.getElementsByClassName('cartas-apps');
-
-  for (var i = 0; i < z.length; i++) {
-     z[i].style.display= "none";
-  } 
- 
-})
-btnDiseno.addEventListener('click',()=>
-{
-    btnDiseno.classList.add("option-activate")
-    btnWebs.classList.remove("option-activate")
-    btnApps.classList.remove("option-activate")
-
-    var x = document.getElementsByClassName('cartas-diseño');
-
-    for (var i = 0; i < x.length; i++) {
-       x[i].style.display= "block";
-    } 
-
-    var y = document.getElementsByClassName('cartas-web');
-
-  for (var i = 0; i < y.length; i++) {
-     y[i].style.display= "none";
-  } 
-    var z = document.getElementsByClassName('cartas-apps');
-
-  for (var i = 0; i < z.length; i++) {
-     z[i].style.display= "none";
-  } 
- 
-})
-btnApps.addEventListener('click',()=>
-{
-    btnDiseno.classList.remove("option-activate")
-    btnWebs.classList.remove("option-activate")
-    btnApps.classList.add("option-activate")
-
-    var x = document.getElementsByClassName('cartas-diseño');
-
-    for (var i = 0; i < x.length; i++) {
-       x[i].style.display= "none";
-    } 
-
-    var y = document.getElementsByClassName('cartas-web');
-
-  for (var i = 0; i < y.length; i++) {
-     y[i].style.display= "none";
-  } 
-    var z = document.getElementsByClassName('cartas-apps');
-
-  for (var i = 0; i < z.length; i++) {
-     z[i].style.display= "block";
-  } 
- 
-})
 
 
 document.addEventListener("DOMContentLoaded", function() {
