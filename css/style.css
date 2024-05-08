@@ -803,9 +803,10 @@
   background: var(--second-color);
   border-radius: 6px;
   padding: 1.2rem;
+  transition: all .4s;
 }
 .containerImgNewCard{
-  
+    position: relative;
     background-color: #1B1B32;
     height: 8.5rem;
     width: 100%;
@@ -860,6 +861,44 @@
 .newCard a{
   width: 100%;
 }
+.newCard:hover {
+  transform: translateY(5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width:700px){
+  .newCard{
+    width: 80%;
+    margin: 0 auto;
+    min-width: 280px;
+  }
+}
+
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6                                     ); /* Fondo semitransparente */
+  opacity: 0; /* Ocultamos inicialmente la capa */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease; /* Transición suave */
+}
+
+.newCard:hover .imageOverlay {
+  opacity: 1; /* Mostramos la capa al pasar el mouse */
+}
+
+.projectDate {
+  font-family: var(--font-raleway);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+}
 
 /* Estilos para mover los botones de navegación debajo del carrusel */
 
@@ -871,12 +910,11 @@
 
 }
 .swiper-wrapper{
-  gap: 3rem;
+ position: relative;
+
 }
 .swiper-slide{
-  flex-basis: 0;
-  flex-grow: 1;
-  transition: 300ms;
+  
 }
 
 .swiper-button-prev::after,.swiper-button-next::after
@@ -994,6 +1032,7 @@
       font-size: 10px;
       top: 150%; /* Ajustar la distancia del tooltip en pantallas pequeñas */
   }
+  
 }
 /*Contactos*/
 .contact-container
