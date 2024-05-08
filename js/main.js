@@ -32,7 +32,7 @@ window.addEventListener('scroll',scrollHeader)
     },
     {
       nombre: "Admin links",
-      imagen: "../img/project/eas.png",
+      imagen: "../img/project/links.png",
       categoria: "Webs",
       tecnologias: ["HTML", "CSS","Node","Mongo DB"],
       descripcion: "sitio en el cual podras almacenar tus enlaces de forma segura.",
@@ -56,7 +56,7 @@ window.addEventListener('scroll',scrollHeader)
       },    
     {
       nombre: "Tienda astronomia",
-      imagen: "./img/project/proyecto2.png",
+      imagen: "./img/project/tiendaD.png",
       categoria: "Diseños",
       tecnologias: ["Figma"],
       descripcion: "Prototipo de tienda online de articulos astronomicos.",
@@ -64,15 +64,15 @@ window.addEventListener('scroll',scrollHeader)
     },
     {
       nombre: "Conecta Emprende",
-      imagen: "./img/project/proyecto2.png",
+      imagen: "./img/project/conectaD.png",
       categoria: "Diseños",
       tecnologias: ["Figma"],
       descripcion: "Prototipo de aplicacion movil para la gestion de contenido.",
-      repositorio: "https://www.figma.com/file/2Zz5rIvOxZ6QvdxVF2PGrN/Untitled?node-id=0%3A1&t=vFoov1cGfjYzrgUx-1",
+      repositorio: "https://www.figma.com/file/grAoUJ4o8G2RtJ71uqYO87/Conecta-Emptrende?type=design&node-id=0%3A1&mode=design&t=4N58M0P8owUHXYVW-1",
     },
     {
       nombre: "Agenda",
-      imagen: "./img/project/proyecto2.png",
+      imagen: "./img/project/agendaD.png",
       categoria: "Diseños",
       tecnologias: ["Figma"],
       descripcion: "Prototipo de agenda digital adaptable a cualquier dispositivo.",
@@ -80,7 +80,7 @@ window.addEventListener('scroll',scrollHeader)
     },
     {
       nombre: "Portafolio",
-      imagen: "./img/project/proyecto2.png",
+      imagen: "./img/project/portafolioD.png",
       categoria: "Diseños",
       tecnologias: ["Figma"],
       descripcion: "Prototipo de portafolio para programador con un buen diseño.",
@@ -123,8 +123,8 @@ window.addEventListener('scroll',scrollHeader)
     return `
       <div class="swiper-slide">
         <div class="newCard">
-          <div class="containerImgNewCard">
-            <img class="imgNewCard" src="${project.imagen}" alt="${project.nombre}">
+          <div class="containerImgNewCard" style="background-image: url(${project.imagen});">
+            
           </div>
           <div class="tecnologiesUsed">
             ${project.tecnologias.map((tecnologia) => `<div class="bage"><p>${tecnologia}</p></div>`).join("")}
