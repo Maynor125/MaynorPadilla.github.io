@@ -16,7 +16,7 @@ window.addEventListener('scroll',scrollHeader)
   const proyectos = [
     {
       nombre: "Control universidad",
-      imagen: "../img/project/university.png",
+      imagen: "./img/project/university.png",
       categoria: "Webs",
       fecha:"20 de enero del 2022",
       tecnologias: ["Django", "Sass", "Potsgre SQL"],
@@ -25,7 +25,7 @@ window.addEventListener('scroll',scrollHeader)
     },
     {
       nombre: "Plataforma EAS",
-      imagen: "../img/project/eas.png",
+      imagen: "./img/project/eas.png",
       categoria: "Webs",
       fecha:"25 de noviembre del 2022",
       tecnologias: ["HTML", "CSS", "JavaScript","Node"],
@@ -34,7 +34,7 @@ window.addEventListener('scroll',scrollHeader)
     },
     {
       nombre: "Admin links",
-      imagen: "../img/project/links.png",
+      imagen: "./img/project/links.png",
       categoria: "Webs",
       fecha:"09 de enero del 2023",
       tecnologias: ["HTML", "CSS","Node","Mongo DB"],
@@ -43,16 +43,27 @@ window.addEventListener('scroll',scrollHeader)
     },
     {
       nombre: "SocioPosts",
-      imagen: "../img/project/sociopost.png",
+      imagen: "./img/project/sociopost.png",
       categoria: "Webs",
+      tipo:"Web",
       fecha:"16 de octubre del 2023",
       tecnologias: ["Next js","Css","Node","MongoDB"],
       descripcion: "Sitio para alogar publicaciones en la cual puedes subir imagenes y mas",
-      repositorio: "https://github.com/Maynor125/Calculadora.git",
+      repositorio: "https://publicaciones-app.vercel.app/",
+    },
+    {
+      nombre: "Commuvemar web",
+      imagen: "./img/project/commuvemar.png",
+      categoria:"Webs",
+      tipo:"Web",
+      fecha:"10 de junio del 2024",
+      tecnologias:["Next JS","MUI","Redux","Axios"],
+      descripcion:"Aplicacion web para gestion de fichas de inspeccion de Commuvemar",
+      repositorio: "https://coomuvemar-frontend.vercel.app/"
     },
     {
         nombre: "Calculadora",
-        imagen: "../img/project/calculadora1.png",
+        imagen: "./img/project/calculadora1.png",
         categoria: "Webs",
         fecha:"24 de marzo del 2023",
         tecnologias: ["HTML", "CSS", "React"],
@@ -151,7 +162,7 @@ window.addEventListener('scroll',scrollHeader)
             <p>${project.descripcion}</p>
           </div>
           <a target="_blank" href="${project.repositorio}" class="boton">
-            ${project.categoria === "Diseños"? "Ir a figma" : "Repositorio"}
+            ${project.categoria === "Diseños"? "Ir a figma" : project.tipo === "Web" ? "Demo":  "Repositorio"}
           </a>
         </div>
       </div>
